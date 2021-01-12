@@ -7,6 +7,9 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   serverElements = [{ type: "server", name: "Test", content: "Teste content" }];
+  // exercise
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
@@ -25,5 +28,14 @@ export class AppComponent {
       name: blueprintData.serverName,
       content: blueprintData.serverContent,
     });
+  }
+
+  // exercise
+  onIntervalFired(firedNumber: number) {
+    if (firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
   }
 }
